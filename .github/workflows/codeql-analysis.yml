@@ -18,9 +18,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
+    permissions: write-all
     strategy:
       fail-fast: false
       matrix:
