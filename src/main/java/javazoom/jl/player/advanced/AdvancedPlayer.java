@@ -138,6 +138,24 @@ public class AdvancedPlayer
     }
 
     /**
+     * Retrieves the position in milliseconds of the current audio
+     * sample being played. This method delegates to the <code>
+     * AudioDevice</code> that is used by this player to sound
+     * the decoded audio samples.
+     */
+    public int getPosition()
+    {
+        int position = lastPosition;
+
+        AudioDevice out = audio;
+        if (out!=null)
+        {
+            position = out.getPosition();
+        }
+        return position;
+    }
+
+    /**
      * Decodes a single frame.
      *
      * @return true if there are no more frames to decode, false otherwise.
